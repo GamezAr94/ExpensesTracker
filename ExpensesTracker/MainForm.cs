@@ -55,5 +55,10 @@ namespace ExpensesTracker
         {
             this.Close();
         }
+
+        private void textBoxUserName_Click(object sender, EventArgs e)
+        {
+            textBoxUserName.SelectAll();
+        }
     }
 }

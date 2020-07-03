@@ -64,9 +64,9 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::ExpensesTracker.Properties.Resources.logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(60, 99);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(61, 104);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(141, 141);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(141, 132);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 1;
             this.pictureBoxLogo.TabStop = false;
@@ -77,7 +77,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(77, 251);
+            this.label3.Location = new System.Drawing.Point(77, 253);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 37);
             this.label3.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(6, 255);
+            this.label1.Location = new System.Drawing.Point(6, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 29);
             this.label1.TabIndex = 0;
@@ -112,7 +112,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(44, 291);
+            this.label4.Location = new System.Drawing.Point(44, 294);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(177, 15);
             this.label4.TabIndex = 0;
@@ -121,9 +121,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ExpensesTracker.Properties.Resources.userIcono;
-            this.pictureBox1.Location = new System.Drawing.Point(374, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(384, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 136);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -144,7 +144,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.Snow;
-            this.buttonLogin.Location = new System.Drawing.Point(374, 331);
+            this.buttonLogin.Location = new System.Drawing.Point(374, 328);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(136, 30);
             this.buttonLogin.TabIndex = 5;
@@ -157,7 +157,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.label6.Location = new System.Drawing.Point(326, 243);
+            this.label6.Location = new System.Drawing.Point(326, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(231, 13);
             this.label6.TabIndex = 2;
@@ -168,12 +168,13 @@
             this.textBoxUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.textBoxUserName.Location = new System.Drawing.Point(329, 234);
+            this.textBoxUserName.Location = new System.Drawing.Point(329, 236);
             this.textBoxUserName.Multiline = true;
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(225, 20);
             this.textBoxUserName.TabIndex = 1;
             this.textBoxUserName.Text = "User name";
+            this.textBoxUserName.Click += new System.EventHandler(this.textBoxUserName_Click);
             this.textBoxUserName.Enter += new System.EventHandler(this.textBoxUserName_Enter);
             this.textBoxUserName.Leave += new System.EventHandler(this.textBoxUserName_Leave);
             // 
@@ -183,7 +184,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.label7.Location = new System.Drawing.Point(326, 288);
+            this.label7.Location = new System.Drawing.Point(326, 290);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(231, 13);
             this.label7.TabIndex = 4;
@@ -194,7 +195,7 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(329, 276);
+            this.textBoxPassword.Location = new System.Drawing.Point(329, 278);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(225, 21);
