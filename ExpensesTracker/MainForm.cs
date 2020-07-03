@@ -53,7 +53,7 @@ namespace ExpensesTracker
 
         private void labelClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void textBoxUserName_Click(object sender, EventArgs e)
