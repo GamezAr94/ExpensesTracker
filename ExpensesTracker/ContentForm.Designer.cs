@@ -30,19 +30,22 @@
         {
             this.panelTopBorder = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelSelectedItem = new System.Windows.Forms.Panel();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonMinimize = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuLogo = new System.Windows.Forms.PictureBox();
-            this.buttonInfo = new System.Windows.Forms.Button();
+            this.panelSelectedItem = new System.Windows.Forms.Panel();
+            this.buttonExpenses = new System.Windows.Forms.Button();
             this.buttonBills = new System.Windows.Forms.Button();
-            this.buttonReceipt = new System.Windows.Forms.Button();
+            this.buttonAddReceipt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.receipts1 = new ExpensesTracker.Receipts();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.receiptsUserContent = new ExpensesTracker.Receipts();
+            this.startPageUserContent = new ExpensesTracker.StartPage();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuLogo)).BeginInit();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTopBorder
@@ -57,18 +60,45 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.pictureBoxMenuLogo);
             this.panelMenu.Controls.Add(this.panelSelectedItem);
-            this.panelMenu.Controls.Add(this.buttonInfo);
+            this.panelMenu.Controls.Add(this.buttonExpenses);
             this.panelMenu.Controls.Add(this.buttonBills);
-            this.panelMenu.Controls.Add(this.buttonReceipt);
+            this.panelMenu.Controls.Add(this.buttonAddReceipt);
+            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(65, 484);
             this.panelMenu.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ExpensesTracker.Properties.Resources.logoutIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 449);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxMenuLogo
+            // 
+            this.pictureBoxMenuLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.pictureBoxMenuLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMenuLogo.Image = global::ExpensesTracker.Properties.Resources.menuLogo;
+            this.pictureBoxMenuLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMenuLogo.Name = "pictureBoxMenuLogo";
+            this.pictureBoxMenuLogo.Size = new System.Drawing.Size(185, 52);
+            this.pictureBoxMenuLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMenuLogo.TabIndex = 9;
+            this.pictureBoxMenuLogo.TabStop = false;
+            this.pictureBoxMenuLogo.Click += new System.EventHandler(this.pictureBoxMenuLogo_Click);
+            this.pictureBoxMenuLogo.DoubleClick += new System.EventHandler(this.pictureBoxMenuLogo_DoubleClick);
+            this.pictureBoxMenuLogo.MouseEnter += new System.EventHandler(this.pictureBoxMenuLogo_MouseEnter);
+            this.pictureBoxMenuLogo.MouseLeave += new System.EventHandler(this.pictureBoxMenuLogo_MouseLeave);
             // 
             // panelSelectedItem
             // 
@@ -77,6 +107,70 @@
             this.panelSelectedItem.Name = "panelSelectedItem";
             this.panelSelectedItem.Size = new System.Drawing.Size(10, 52);
             this.panelSelectedItem.TabIndex = 2;
+            // 
+            // buttonExpenses
+            // 
+            this.buttonExpenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.buttonExpenses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonExpenses.FlatAppearance.BorderSize = 0;
+            this.buttonExpenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExpenses.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExpenses.ForeColor = System.Drawing.Color.White;
+            this.buttonExpenses.Image = global::ExpensesTracker.Properties.Resources.receiptIcon1;
+            this.buttonExpenses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExpenses.Location = new System.Drawing.Point(10, 210);
+            this.buttonExpenses.Name = "buttonExpenses";
+            this.buttonExpenses.Size = new System.Drawing.Size(197, 52);
+            this.buttonExpenses.TabIndex = 0;
+            this.buttonExpenses.TabStop = false;
+            this.buttonExpenses.Text = "Expenses";
+            this.buttonExpenses.UseVisualStyleBackColor = false;
+            this.buttonExpenses.Click += new System.EventHandler(this.buttonExpenses_Click);
+            // 
+            // buttonBills
+            // 
+            this.buttonBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.buttonBills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBills.FlatAppearance.BorderSize = 0;
+            this.buttonBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBills.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBills.ForeColor = System.Drawing.Color.White;
+            this.buttonBills.Image = global::ExpensesTracker.Properties.Resources.billIcon;
+            this.buttonBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBills.Location = new System.Drawing.Point(10, 152);
+            this.buttonBills.Name = "buttonBills";
+            this.buttonBills.Size = new System.Drawing.Size(197, 52);
+            this.buttonBills.TabIndex = 0;
+            this.buttonBills.TabStop = false;
+            this.buttonBills.Text = " Add Bill";
+            this.buttonBills.UseVisualStyleBackColor = false;
+            this.buttonBills.Click += new System.EventHandler(this.buttonBills_Click);
+            // 
+            // buttonAddReceipt
+            // 
+            this.buttonAddReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.buttonAddReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAddReceipt.FlatAppearance.BorderSize = 0;
+            this.buttonAddReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddReceipt.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddReceipt.ForeColor = System.Drawing.Color.White;
+            this.buttonAddReceipt.Image = global::ExpensesTracker.Properties.Resources.addRecordIcon;
+            this.buttonAddReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddReceipt.Location = new System.Drawing.Point(10, 94);
+            this.buttonAddReceipt.Name = "buttonAddReceipt";
+            this.buttonAddReceipt.Size = new System.Drawing.Size(197, 52);
+            this.buttonAddReceipt.TabIndex = 0;
+            this.buttonAddReceipt.TabStop = false;
+            this.buttonAddReceipt.Text = "Add Record";
+            this.buttonAddReceipt.UseVisualStyleBackColor = false;
+            this.buttonAddReceipt.Click += new System.EventHandler(this.buttonAddReceipt_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(146, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(679, 481);
+            this.panel1.TabIndex = 9;
             // 
             // buttonClose
             // 
@@ -116,103 +210,31 @@
             this.buttonMinimize.UseVisualStyleBackColor = false;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
-            // pictureBox1
+            // panelContent
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ExpensesTracker.Properties.Resources.logoutIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 449);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.panelContent.Controls.Add(this.startPageUserContent);
+            this.panelContent.Controls.Add(this.receiptsUserContent);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelContent.Location = new System.Drawing.Point(65, 28);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(763, 456);
+            this.panelContent.TabIndex = 9;
             // 
-            // pictureBoxMenuLogo
+            // receiptsUserContent
             // 
-            this.pictureBoxMenuLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.pictureBoxMenuLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMenuLogo.Image = global::ExpensesTracker.Properties.Resources.menuLogo;
-            this.pictureBoxMenuLogo.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMenuLogo.Name = "pictureBoxMenuLogo";
-            this.pictureBoxMenuLogo.Size = new System.Drawing.Size(185, 52);
-            this.pictureBoxMenuLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMenuLogo.TabIndex = 9;
-            this.pictureBoxMenuLogo.TabStop = false;
-            this.pictureBoxMenuLogo.Click += new System.EventHandler(this.pictureBoxMenuLogo_Click);
-            this.pictureBoxMenuLogo.MouseEnter += new System.EventHandler(this.pictureBoxMenuLogo_MouseEnter);
-            this.pictureBoxMenuLogo.MouseLeave += new System.EventHandler(this.pictureBoxMenuLogo_MouseLeave);
+            this.receiptsUserContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.receiptsUserContent.Location = new System.Drawing.Point(0, 0);
+            this.receiptsUserContent.Name = "receiptsUserContent";
+            this.receiptsUserContent.Size = new System.Drawing.Size(763, 456);
+            this.receiptsUserContent.TabIndex = 0;
             // 
-            // buttonInfo
+            // startPageUserContent
             // 
-            this.buttonInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.buttonInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonInfo.FlatAppearance.BorderSize = 0;
-            this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInfo.ForeColor = System.Drawing.Color.White;
-            this.buttonInfo.Image = global::ExpensesTracker.Properties.Resources.receiptIcon1;
-            this.buttonInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonInfo.Location = new System.Drawing.Point(10, 210);
-            this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(197, 52);
-            this.buttonInfo.TabIndex = 0;
-            this.buttonInfo.TabStop = false;
-            this.buttonInfo.Text = "Information";
-            this.buttonInfo.UseVisualStyleBackColor = false;
-            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
-            // 
-            // buttonBills
-            // 
-            this.buttonBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.buttonBills.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBills.FlatAppearance.BorderSize = 0;
-            this.buttonBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBills.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBills.ForeColor = System.Drawing.Color.White;
-            this.buttonBills.Image = global::ExpensesTracker.Properties.Resources.receiptIcon1;
-            this.buttonBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBills.Location = new System.Drawing.Point(10, 152);
-            this.buttonBills.Name = "buttonBills";
-            this.buttonBills.Size = new System.Drawing.Size(197, 52);
-            this.buttonBills.TabIndex = 0;
-            this.buttonBills.TabStop = false;
-            this.buttonBills.Text = "Bills";
-            this.buttonBills.UseVisualStyleBackColor = false;
-            this.buttonBills.Click += new System.EventHandler(this.buttonBills_Click);
-            // 
-            // buttonReceipt
-            // 
-            this.buttonReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.buttonReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonReceipt.FlatAppearance.BorderSize = 0;
-            this.buttonReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReceipt.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReceipt.ForeColor = System.Drawing.Color.White;
-            this.buttonReceipt.Image = global::ExpensesTracker.Properties.Resources.receiptIcon1;
-            this.buttonReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReceipt.Location = new System.Drawing.Point(10, 94);
-            this.buttonReceipt.Name = "buttonReceipt";
-            this.buttonReceipt.Size = new System.Drawing.Size(197, 52);
-            this.buttonReceipt.TabIndex = 0;
-            this.buttonReceipt.TabStop = false;
-            this.buttonReceipt.Text = "Receipts";
-            this.buttonReceipt.UseVisualStyleBackColor = false;
-            this.buttonReceipt.Click += new System.EventHandler(this.buttonReceipt_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(146, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 481);
-            this.panel1.TabIndex = 9;
-            // 
-            // receipts1
-            // 
-            this.receipts1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.receipts1.Location = new System.Drawing.Point(65, 24);
-            this.receipts1.Name = "receipts1";
-            this.receipts1.Size = new System.Drawing.Size(763, 460);
-            this.receipts1.TabIndex = 9;
+            this.startPageUserContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startPageUserContent.Location = new System.Drawing.Point(0, 0);
+            this.startPageUserContent.Name = "startPageUserContent";
+            this.startPageUserContent.Size = new System.Drawing.Size(763, 456);
+            this.startPageUserContent.TabIndex = 1;
             // 
             // ContentForm
             // 
@@ -220,10 +242,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(828, 484);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.panelTopBorder);
-            this.Controls.Add(this.receipts1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContentForm";
@@ -233,22 +255,25 @@
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuLogo)).EndInit();
+            this.panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panelTopBorder;
-        private System.Windows.Forms.Button buttonReceipt;
+        private System.Windows.Forms.Button buttonAddReceipt;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelSelectedItem;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.PictureBox pictureBoxMenuLogo;
-        private System.Windows.Forms.Button buttonInfo;
+        private System.Windows.Forms.Button buttonExpenses;
         private System.Windows.Forms.Button buttonBills;
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private Receipts receipts1;
+        private System.Windows.Forms.Panel panelContent;
+        private Receipts receiptsUserContent;
+        private StartPage startPageUserContent;
     }
 }
