@@ -29,44 +29,46 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelClose = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoginIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogoHSH = new System.Windows.Forms.PictureBox();
+            this.panelBorderUserName = new System.Windows.Forms.Panel();
+            this.panelBorderPassword = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoHSH)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.panel1.Controls.Add(this.pictureBoxLogo);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.pictureBoxLogoHSH);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 414);
             this.panel1.TabIndex = 0;
             // 
-            // label5
+            // labelLogin
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.label5.Location = new System.Drawing.Point(407, 199);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Login";
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.labelLogin.Location = new System.Drawing.Point(406, 190);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(78, 29);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Login";
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.Snow;
             this.buttonLogin.Location = new System.Drawing.Point(360, 336);
@@ -75,25 +77,14 @@
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.label6.Location = new System.Drawing.Point(326, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(231, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "________________________________";
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxUserName
             // 
             this.textBoxUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.textBoxUserName.Location = new System.Drawing.Point(329, 239);
+            this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
+            this.textBoxUserName.Location = new System.Drawing.Point(329, 233);
             this.textBoxUserName.Multiline = true;
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(225, 20);
@@ -103,24 +94,12 @@
             this.textBoxUserName.Enter += new System.EventHandler(this.textBoxUserName_Enter);
             this.textBoxUserName.Leave += new System.EventHandler(this.textBoxUserName_Leave);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.label7.Location = new System.Drawing.Point(326, 293);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(231, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "________________________________";
-            // 
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(329, 281);
+            this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
+            this.textBoxPassword.Location = new System.Drawing.Point(329, 275);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(225, 21);
@@ -141,25 +120,41 @@
             this.labelClose.Text = "X";
             this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
             // 
-            // pictureBox1
+            // pictureBoxLoginIcon
             // 
-            this.pictureBox1.Image = global::ExpensesTracker.Properties.Resources.userIcono;
-            this.pictureBox1.Location = new System.Drawing.Point(384, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLoginIcon.Image = global::ExpensesTracker.Properties.Resources.userIcono;
+            this.pictureBoxLoginIcon.Location = new System.Drawing.Point(384, 40);
+            this.pictureBoxLoginIcon.Name = "pictureBoxLoginIcon";
+            this.pictureBoxLoginIcon.Size = new System.Drawing.Size(115, 115);
+            this.pictureBoxLoginIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLoginIcon.TabIndex = 1;
+            this.pictureBoxLoginIcon.TabStop = false;
             // 
-            // pictureBoxLogo
+            // pictureBoxLogoHSH
             // 
-            this.pictureBoxLogo.Image = global::ExpensesTracker.Properties.Resources.logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(9, 100);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(231, 212);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 1;
-            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogoHSH.Image = global::ExpensesTracker.Properties.Resources.logo;
+            this.pictureBoxLogoHSH.Location = new System.Drawing.Point(9, 95);
+            this.pictureBoxLogoHSH.Name = "pictureBoxLogoHSH";
+            this.pictureBoxLogoHSH.Size = new System.Drawing.Size(231, 219);
+            this.pictureBoxLogoHSH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogoHSH.TabIndex = 1;
+            this.pictureBoxLogoHSH.TabStop = false;
+            // 
+            // panelBorderUserName
+            // 
+            this.panelBorderUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.panelBorderUserName.Location = new System.Drawing.Point(329, 252);
+            this.panelBorderUserName.Name = "panelBorderUserName";
+            this.panelBorderUserName.Size = new System.Drawing.Size(225, 2);
+            this.panelBorderUserName.TabIndex = 7;
+            // 
+            // panelBorderPassword
+            // 
+            this.panelBorderPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.panelBorderPassword.Location = new System.Drawing.Point(329, 293);
+            this.panelBorderPassword.Name = "panelBorderPassword";
+            this.panelBorderPassword.Size = new System.Drawing.Size(225, 2);
+            this.panelBorderPassword.TabIndex = 7;
             // 
             // MainForm
             // 
@@ -168,14 +163,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(619, 414);
+            this.Controls.Add(this.panelBorderPassword);
+            this.Controls.Add(this.panelBorderUserName);
             this.Controls.Add(this.labelClose);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelLogin);
+            this.Controls.Add(this.pictureBoxLoginIcon);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -183,8 +178,8 @@
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoHSH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,15 +188,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBoxLogoHSH;
+        private System.Windows.Forms.PictureBox pictureBoxLoginIcon;
+        private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxUserName;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelClose;
+        private System.Windows.Forms.Panel panelBorderUserName;
+        private System.Windows.Forms.Panel panelBorderPassword;
     }
 }
 

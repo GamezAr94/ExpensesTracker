@@ -12,6 +12,7 @@ namespace ExpensesTracker
 {
     public partial class MainForm : Form
     {
+        ContentForm contentForm = new ContentForm();
         public MainForm()
         {
             InitializeComponent();
@@ -19,7 +20,6 @@ namespace ExpensesTracker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            buttonLogin.FlatStyle = FlatStyle.Flat;
         }
 
         private void textBoxPassword_Enter(object sender, EventArgs e)
@@ -59,6 +59,12 @@ namespace ExpensesTracker
         private void textBoxUserName_Click(object sender, EventArgs e)
         {
             textBoxUserName.SelectAll();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            contentForm.Show();
         }
     }
 }
