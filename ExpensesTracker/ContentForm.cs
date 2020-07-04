@@ -16,6 +16,10 @@ namespace ExpensesTracker
         {
             InitializeComponent();
         }
+        private void ContentForm_Load(object sender, EventArgs e)
+        {
+            buttonReceipt.Height = panelSelectedItem.Height;
+        }
         private void pictureBoxMenuLogo_Click(object sender, EventArgs e)
         {
             if(panelMenu.Width >= 185)
@@ -42,6 +46,21 @@ namespace ExpensesTracker
         private void pictureBoxMenuLogo_MouseLeave(object sender, EventArgs e)
         {
             pictureBoxMenuLogo.BackColor = Color.FromArgb(210, 10, 40);
+        }
+
+        private void buttonReceipt_Click(object sender, EventArgs e)
+        {
+            panelSelectedItem.Top = buttonReceipt.Top;
+        }
+
+        private void buttonBills_Click(object sender, EventArgs e)
+        {
+            panelSelectedItem.Top = buttonBills.Top;
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            panelSelectedItem.Top = buttonInfo.Top;
         }
     }
 }
