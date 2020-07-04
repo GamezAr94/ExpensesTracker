@@ -16,14 +16,39 @@ namespace ExpensesTracker
         {
             InitializeComponent();
         }
+        //initializing the form with the landing page in front and the panelSelectItem whit visible equals to false
         private void ContentForm_Load(object sender, EventArgs e)
         {
             startPageUserContent.BringToFront();
-            panelSelectedItem.Hide();
+            panelSelectedItem.Visible = false;
         }
-        private void pictureBoxMenuLogo_Click(object sender, EventArgs e)
+
+        //the button will minimize the program
+        private void buttonMinimize_Click(object sender, EventArgs e)
         {
-            if(panelMenu.Width >= 185)
+            this.WindowState = FormWindowState.Minimized;
+        }
+        //the button will close the aplication
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        #region Logo behavior
+        //the logo will change of color when the mouse is hovering it
+        private void pictureBoxMenuLogo_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxMenuLogo.BackColor = Color.FromArgb(230, 10, 40);
+        }
+        //the logo will return to its color when the mouse leaves it
+        private void pictureBoxMenuLogo_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxMenuLogo.BackColor = Color.FromArgb(210, 10, 40);
+        }
+        //the logo will change the size of the left panel when clicked
+        private void pictureBoxMenuLogo_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panelMenu.Width >= 185)
             {
                 panelMenu.Width = 65;
             }
@@ -32,44 +57,56 @@ namespace ExpensesTracker
                 panelMenu.Width = 185;
             }
         }
-        private void buttonMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void pictureBoxMenuLogo_MouseEnter(object sender, EventArgs e)
-        {
-            pictureBoxMenuLogo.BackColor = Color.FromArgb(230, 10, 40);
-        }
-        private void pictureBoxMenuLogo_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBoxMenuLogo.BackColor = Color.FromArgb(210, 10, 40);
-        }
+        #endregion
 
-        private void buttonBills_Click(object sender, EventArgs e)
-        {
-            panelSelectedItem.Top = buttonBills.Top;
-        }
-
+        #region Menu Buttons behavior
+        //the button will bring to the front its user control, 
+        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
         private void buttonAddReceipt_Click(object sender, EventArgs e)
         {
-            panelSelectedItem.Top = buttonAddReceipt.Top;
-            panelSelectedItem.Show();
-            receiptsUserContent.BringToFront();
+            if(panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonAddReceipt.Top)
+            {
+                panelSelectedItem.Visible = false;
+                startPageUserContent.BringToFront();
+            }else
+            {
+                panelSelectedItem.Top = buttonAddReceipt.Top;
+                panelSelectedItem.Visible = true;
+                receiptsUserContent.BringToFront();
+            }
         }
-
+        //the button will bring to the front its user control, 
+        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
+        private void buttonBills_Click(object sender, EventArgs e)
+        {
+            if (panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonBills.Top)
+            {
+                panelSelectedItem.Visible = false;
+                startPageUserContent.BringToFront();
+            }
+            else
+            {
+                panelSelectedItem.Top = buttonBills.Top;
+                panelSelectedItem.Visible = true;
+                //add its own user controler
+            }
+        }
+        //the button will bring to the front its user control, 
+        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
         private void buttonExpenses_Click(object sender, EventArgs e)
         {
-            panelSelectedItem.Top = buttonExpenses.Top;
+            if (panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonExpenses.Top)
+            {
+                panelSelectedItem.Visible = false;
+                startPageUserContent.BringToFront();
+            }
+            else
+            {
+                panelSelectedItem.Top = buttonExpenses.Top;
+                panelSelectedItem.Visible = true;
+                //add its own user controler
+            }
         }
-
-        private void pictureBoxMenuLogo_DoubleClick(object sender, EventArgs e)
-        {
-            panelSelectedItem.Hide();
-            startPageUserContent.BringToFront();
-        }
+        #endregion
     }
 }

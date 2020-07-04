@@ -95,8 +95,7 @@
             this.pictureBoxMenuLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMenuLogo.TabIndex = 9;
             this.pictureBoxMenuLogo.TabStop = false;
-            this.pictureBoxMenuLogo.Click += new System.EventHandler(this.pictureBoxMenuLogo_Click);
-            this.pictureBoxMenuLogo.DoubleClick += new System.EventHandler(this.pictureBoxMenuLogo_DoubleClick);
+            this.pictureBoxMenuLogo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxMenuLogo_MouseClick);
             this.pictureBoxMenuLogo.MouseEnter += new System.EventHandler(this.pictureBoxMenuLogo_MouseEnter);
             this.pictureBoxMenuLogo.MouseLeave += new System.EventHandler(this.pictureBoxMenuLogo_MouseLeave);
             // 
