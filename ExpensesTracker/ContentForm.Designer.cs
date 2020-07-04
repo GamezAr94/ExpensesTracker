@@ -38,8 +38,8 @@
             this.buttonInfo = new System.Windows.Forms.Button();
             this.buttonBills = new System.Windows.Forms.Button();
             this.buttonReceipt = new System.Windows.Forms.Button();
-            this.labelWelcomeUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.receipts1 = new ExpensesTracker.Receipts();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuLogo)).BeginInit();
@@ -51,12 +51,13 @@
             this.panelTopBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopBorder.Location = new System.Drawing.Point(65, 0);
             this.panelTopBorder.Name = "panelTopBorder";
-            this.panelTopBorder.Size = new System.Drawing.Size(763, 5);
+            this.panelTopBorder.Size = new System.Drawing.Size(763, 10);
             this.panelTopBorder.TabIndex = 1;
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
+            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.pictureBoxMenuLogo);
             this.panelMenu.Controls.Add(this.panelSelectedItem);
@@ -91,6 +92,7 @@
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(24, 26);
             this.buttonClose.TabIndex = 8;
+            this.buttonClose.TabStop = false;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -108,6 +110,7 @@
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.Size = new System.Drawing.Size(24, 30);
             this.buttonMinimize.TabIndex = 8;
+            this.buttonMinimize.TabStop = false;
             this.buttonMinimize.Text = "_";
             this.buttonMinimize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonMinimize.UseVisualStyleBackColor = false;
@@ -153,6 +156,7 @@
             this.buttonInfo.Name = "buttonInfo";
             this.buttonInfo.Size = new System.Drawing.Size(197, 52);
             this.buttonInfo.TabIndex = 0;
+            this.buttonInfo.TabStop = false;
             this.buttonInfo.Text = "Information";
             this.buttonInfo.UseVisualStyleBackColor = false;
             this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
@@ -171,6 +175,7 @@
             this.buttonBills.Name = "buttonBills";
             this.buttonBills.Size = new System.Drawing.Size(197, 52);
             this.buttonBills.TabIndex = 0;
+            this.buttonBills.TabStop = false;
             this.buttonBills.Text = "Bills";
             this.buttonBills.UseVisualStyleBackColor = false;
             this.buttonBills.Click += new System.EventHandler(this.buttonBills_Click);
@@ -189,26 +194,25 @@
             this.buttonReceipt.Name = "buttonReceipt";
             this.buttonReceipt.Size = new System.Drawing.Size(197, 52);
             this.buttonReceipt.TabIndex = 0;
+            this.buttonReceipt.TabStop = false;
             this.buttonReceipt.Text = "Receipts";
             this.buttonReceipt.UseVisualStyleBackColor = false;
             this.buttonReceipt.Click += new System.EventHandler(this.buttonReceipt_Click);
             // 
-            // labelWelcomeUser
-            // 
-            this.labelWelcomeUser.AutoSize = true;
-            this.labelWelcomeUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcomeUser.Location = new System.Drawing.Point(71, 18);
-            this.labelWelcomeUser.Name = "labelWelcomeUser";
-            this.labelWelcomeUser.Size = new System.Drawing.Size(215, 24);
-            this.labelWelcomeUser.TabIndex = 9;
-            this.labelWelcomeUser.Text = "Welcome Back Arturo!";
-            // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(65, 5);
+            this.panel1.Location = new System.Drawing.Point(146, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(711, 106);
-            this.panel1.TabIndex = 10;
+            this.panel1.Size = new System.Drawing.Size(679, 481);
+            this.panel1.TabIndex = 9;
+            // 
+            // receipts1
+            // 
+            this.receipts1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.receipts1.Location = new System.Drawing.Point(65, 24);
+            this.receipts1.Name = "receipts1";
+            this.receipts1.Size = new System.Drawing.Size(763, 460);
+            this.receipts1.TabIndex = 9;
             // 
             // ContentForm
             // 
@@ -216,12 +220,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(828, 484);
-            this.Controls.Add(this.labelWelcomeUser);
-            this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.panelTopBorder);
+            this.Controls.Add(this.receipts1);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -231,7 +234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -246,7 +248,7 @@
         private System.Windows.Forms.Button buttonBills;
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelWelcomeUser;
         private System.Windows.Forms.Panel panel1;
+        private Receipts receipts1;
     }
 }
