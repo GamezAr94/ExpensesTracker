@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxLogoHSH = new System.Windows.Forms.PictureBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelClose = new System.Windows.Forms.Label();
             this.pictureBoxLoginIcon = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogoHSH = new System.Windows.Forms.PictureBox();
             this.panelBorderUserName = new System.Windows.Forms.Panel();
             this.panelBorderPassword = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoHSH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,12 +53,22 @@
             this.panel1.Size = new System.Drawing.Size(249, 414);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBoxLogoHSH
+            // 
+            this.pictureBoxLogoHSH.Image = global::ExpensesTracker.Properties.Resources.logo;
+            this.pictureBoxLogoHSH.Location = new System.Drawing.Point(9, 95);
+            this.pictureBoxLogoHSH.Name = "pictureBoxLogoHSH";
+            this.pictureBoxLogoHSH.Size = new System.Drawing.Size(231, 219);
+            this.pictureBoxLogoHSH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogoHSH.TabIndex = 1;
+            this.pictureBoxLogoHSH.TabStop = false;
+            // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.labelLogin.Location = new System.Drawing.Point(406, 190);
+            this.labelLogin.Location = new System.Drawing.Point(406, 179);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(78, 29);
             this.labelLogin.TabIndex = 0;
@@ -71,7 +81,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.Snow;
-            this.buttonLogin.Location = new System.Drawing.Point(360, 336);
+            this.buttonLogin.Location = new System.Drawing.Point(360, 328);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(157, 34);
             this.buttonLogin.TabIndex = 5;
@@ -84,7 +94,7 @@
             this.textBoxUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
-            this.textBoxUserName.Location = new System.Drawing.Point(329, 233);
+            this.textBoxUserName.Location = new System.Drawing.Point(329, 230);
             this.textBoxUserName.Multiline = true;
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(225, 20);
@@ -99,7 +109,7 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
-            this.textBoxPassword.Location = new System.Drawing.Point(329, 275);
+            this.textBoxPassword.Location = new System.Drawing.Point(329, 272);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(225, 21);
@@ -123,27 +133,17 @@
             // pictureBoxLoginIcon
             // 
             this.pictureBoxLoginIcon.Image = global::ExpensesTracker.Properties.Resources.userIcono;
-            this.pictureBoxLoginIcon.Location = new System.Drawing.Point(384, 40);
+            this.pictureBoxLoginIcon.Location = new System.Drawing.Point(396, 47);
             this.pictureBoxLoginIcon.Name = "pictureBoxLoginIcon";
-            this.pictureBoxLoginIcon.Size = new System.Drawing.Size(115, 115);
+            this.pictureBoxLoginIcon.Size = new System.Drawing.Size(100, 98);
             this.pictureBoxLoginIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLoginIcon.TabIndex = 1;
             this.pictureBoxLoginIcon.TabStop = false;
             // 
-            // pictureBoxLogoHSH
-            // 
-            this.pictureBoxLogoHSH.Image = global::ExpensesTracker.Properties.Resources.logo;
-            this.pictureBoxLogoHSH.Location = new System.Drawing.Point(9, 95);
-            this.pictureBoxLogoHSH.Name = "pictureBoxLogoHSH";
-            this.pictureBoxLogoHSH.Size = new System.Drawing.Size(231, 219);
-            this.pictureBoxLogoHSH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogoHSH.TabIndex = 1;
-            this.pictureBoxLogoHSH.TabStop = false;
-            // 
             // panelBorderUserName
             // 
             this.panelBorderUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.panelBorderUserName.Location = new System.Drawing.Point(329, 252);
+            this.panelBorderUserName.Location = new System.Drawing.Point(329, 249);
             this.panelBorderUserName.Name = "panelBorderUserName";
             this.panelBorderUserName.Size = new System.Drawing.Size(225, 2);
             this.panelBorderUserName.TabIndex = 7;
@@ -151,7 +151,7 @@
             // panelBorderPassword
             // 
             this.panelBorderPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(10)))), ((int)(((byte)(40)))));
-            this.panelBorderPassword.Location = new System.Drawing.Point(329, 293);
+            this.panelBorderPassword.Location = new System.Drawing.Point(329, 290);
             this.panelBorderPassword.Name = "panelBorderPassword";
             this.panelBorderPassword.Size = new System.Drawing.Size(225, 2);
             this.panelBorderPassword.TabIndex = 7;
@@ -178,8 +178,8 @@
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoHSH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
