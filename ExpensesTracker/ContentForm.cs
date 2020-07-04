@@ -16,22 +16,6 @@ namespace ExpensesTracker
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            pictureBoxMenuLogo.BackColor = Color.FromArgb(230, 10, 40);
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBoxMenuLogo.BackColor = Color.FromArgb(210, 10, 40);
-        }
-
         private void pictureBoxMenuLogo_Click(object sender, EventArgs e)
         {
             if(panelMenu.Width >= 185)
@@ -42,6 +26,22 @@ namespace ExpensesTracker
             {
                 panelMenu.Width = 185;
             }
+        }
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void pictureBoxMenuLogo_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxMenuLogo.BackColor = Color.FromArgb(230, 10, 40);
+        }
+        private void pictureBoxMenuLogo_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxMenuLogo.BackColor = Color.FromArgb(210, 10, 40);
         }
     }
 }
