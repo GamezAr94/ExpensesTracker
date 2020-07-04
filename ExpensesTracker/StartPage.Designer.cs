@@ -74,20 +74,20 @@
             // labelSalute
             // 
             this.labelSalute.AutoSize = true;
-            this.labelSalute.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSalute.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSalute.Location = new System.Drawing.Point(76, 4);
             this.labelSalute.Name = "labelSalute";
-            this.labelSalute.Size = new System.Drawing.Size(219, 35);
+            this.labelSalute.Size = new System.Drawing.Size(260, 41);
             this.labelSalute.TabIndex = 1;
             this.labelSalute.Text = "Welcolme back ";
             // 
             // labelNameUser
             // 
             this.labelNameUser.AutoSize = true;
-            this.labelNameUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNameUser.Location = new System.Drawing.Point(281, 4);
             this.labelNameUser.Name = "labelNameUser";
-            this.labelNameUser.Size = new System.Drawing.Size(98, 35);
+            this.labelNameUser.Size = new System.Drawing.Size(117, 41);
             this.labelNameUser.TabIndex = 2;
             this.labelNameUser.Text = "Arturo";
             // 
