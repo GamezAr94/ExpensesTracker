@@ -16,5 +16,10 @@ namespace ExpensesTracker
         {
             InitializeComponent();
         }
+
+        private void StartPage_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

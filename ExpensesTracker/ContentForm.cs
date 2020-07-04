@@ -57,7 +57,7 @@ namespace ExpensesTracker
                 panelMenu.Width = 185;
             }
         }
-        #endregion
+        #endregion Logo
 
         #region Menu Buttons behavior
         //the button will bring to the front its user control, 
@@ -107,6 +107,6 @@ namespace ExpensesTracker
                 //add its own user controler
             }
         }
-        #endregion
+        #endregion Menu buttons
     }
 }
