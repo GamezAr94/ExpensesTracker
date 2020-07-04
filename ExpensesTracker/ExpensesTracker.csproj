@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddBill.Designer.cs">
+      <DependentUpon>AddBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,12 +72,18 @@
     <Compile Include="Receipts.Designer.cs">
       <DependentUpon>Receipts.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StartPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="StartPage.Designer.cs">
       <DependentUpon>StartPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddBill.resx">
+      <DependentUpon>AddBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContentForm.resx">
       <DependentUpon>ContentForm.cs</DependentUpon>
     </EmbeddedResource>

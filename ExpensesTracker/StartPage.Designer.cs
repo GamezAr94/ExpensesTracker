@@ -39,6 +39,16 @@
             this.labelRentTotal = new System.Windows.Forms.Label();
             this.labelMaitenance = new System.Windows.Forms.Label();
             this.labelExpenses = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelTotalAptos = new System.Windows.Forms.Label();
+            this.labelTotalProfit = new System.Windows.Forms.Label();
+            this.labelTotalTenantsNum = new System.Windows.Forms.Label();
+            this.labelTotalRoomsNum = new System.Windows.Forms.Label();
+            this.labelTotalTenants = new System.Windows.Forms.Label();
+            this.labelProfitRent = new System.Windows.Forms.Label();
+            this.labelTotalAptosNum = new System.Windows.Forms.Label();
+            this.labelTotalRooms = new System.Windows.Forms.Label();
+            this.labelSummarize = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelRentCollectedTotal = new System.Windows.Forms.Label();
@@ -53,22 +63,12 @@
             this.labelEmptyRoomsThisMTotal = new System.Windows.Forms.Label();
             this.labelEmptyRoomsNxtM = new System.Windows.Forms.Label();
             this.labelPendings = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelTotalAptos = new System.Windows.Forms.Label();
-            this.labelTotalTenantsNum = new System.Windows.Forms.Label();
-            this.labelTotalRoomsNum = new System.Windows.Forms.Label();
-            this.labelProfitRent = new System.Windows.Forms.Label();
-            this.labelTotalAptosNum = new System.Windows.Forms.Label();
-            this.labelTotalRooms = new System.Windows.Forms.Label();
-            this.labelSummarize = new System.Windows.Forms.Label();
-            this.labelTotalTenants = new System.Windows.Forms.Label();
-            this.labelTotalProfit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGearConfig)).BeginInit();
             this.panelBody.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelPendings.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSalute
@@ -120,9 +120,9 @@
             this.panelBody.Controls.Add(this.panel2);
             this.panelBody.Controls.Add(this.panelPendings);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBody.Location = new System.Drawing.Point(65, 0);
+            this.panelBody.Location = new System.Drawing.Point(82, 0);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(677, 451);
+            this.panelBody.Size = new System.Drawing.Size(681, 456);
             this.panelBody.TabIndex = 3;
             // 
             // panel1
@@ -209,6 +209,153 @@
             this.labelExpenses.Size = new System.Drawing.Size(99, 24);
             this.labelExpenses.TabIndex = 0;
             this.labelExpenses.Text = "Expenses:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(133)))), ((int)(((byte)(189)))));
+            this.panel3.Controls.Add(this.labelTotalAptos);
+            this.panel3.Controls.Add(this.labelTotalProfit);
+            this.panel3.Controls.Add(this.labelTotalTenantsNum);
+            this.panel3.Controls.Add(this.labelTotalRoomsNum);
+            this.panel3.Controls.Add(this.labelTotalTenants);
+            this.panel3.Controls.Add(this.labelProfitRent);
+            this.panel3.Controls.Add(this.labelTotalAptosNum);
+            this.panel3.Controls.Add(this.labelTotalRooms);
+            this.panel3.Controls.Add(this.labelSummarize);
+            this.panel3.Location = new System.Drawing.Point(327, 234);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(288, 177);
+            this.panel3.TabIndex = 3;
+            // 
+            // labelTotalAptos
+            // 
+            this.labelTotalAptos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalAptos.AutoSize = true;
+            this.labelTotalAptos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalAptos.ForeColor = System.Drawing.Color.White;
+            this.labelTotalAptos.Location = new System.Drawing.Point(36, 54);
+            this.labelTotalAptos.Name = "labelTotalAptos";
+            this.labelTotalAptos.Size = new System.Drawing.Size(123, 17);
+            this.labelTotalAptos.TabIndex = 1;
+            this.labelTotalAptos.Text = "Total appartments:";
+            // 
+            // labelTotalProfit
+            // 
+            this.labelTotalProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalProfit.AutoSize = true;
+            this.labelTotalProfit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalProfit.ForeColor = System.Drawing.Color.White;
+            this.labelTotalProfit.Location = new System.Drawing.Point(206, 121);
+            this.labelTotalProfit.Name = "labelTotalProfit";
+            this.labelTotalProfit.Size = new System.Drawing.Size(24, 17);
+            this.labelTotalProfit.TabIndex = 8;
+            this.labelTotalProfit.Text = "15";
+            this.labelTotalProfit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalTenantsNum
+            // 
+            this.labelTotalTenantsNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalTenantsNum.AutoSize = true;
+            this.labelTotalTenantsNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalTenantsNum.ForeColor = System.Drawing.Color.White;
+            this.labelTotalTenantsNum.Location = new System.Drawing.Point(206, 98);
+            this.labelTotalTenantsNum.Name = "labelTotalTenantsNum";
+            this.labelTotalTenantsNum.Size = new System.Drawing.Size(24, 17);
+            this.labelTotalTenantsNum.TabIndex = 6;
+            this.labelTotalTenantsNum.Text = "15";
+            this.labelTotalTenantsNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalRoomsNum
+            // 
+            this.labelTotalRoomsNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalRoomsNum.AutoSize = true;
+            this.labelTotalRoomsNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalRoomsNum.ForeColor = System.Drawing.Color.White;
+            this.labelTotalRoomsNum.Location = new System.Drawing.Point(206, 76);
+            this.labelTotalRoomsNum.Name = "labelTotalRoomsNum";
+            this.labelTotalRoomsNum.Size = new System.Drawing.Size(16, 17);
+            this.labelTotalRoomsNum.TabIndex = 4;
+            this.labelTotalRoomsNum.Text = "2";
+            this.labelTotalRoomsNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalTenants
+            // 
+            this.labelTotalTenants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalTenants.AutoSize = true;
+            this.labelTotalTenants.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalTenants.ForeColor = System.Drawing.Color.White;
+            this.labelTotalTenants.Location = new System.Drawing.Point(36, 98);
+            this.labelTotalTenants.Name = "labelTotalTenants";
+            this.labelTotalTenants.Size = new System.Drawing.Size(91, 17);
+            this.labelTotalTenants.TabIndex = 5;
+            this.labelTotalTenants.Text = "Total tenants:";
+            // 
+            // labelProfitRent
+            // 
+            this.labelProfitRent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelProfitRent.AutoSize = true;
+            this.labelProfitRent.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfitRent.ForeColor = System.Drawing.Color.White;
+            this.labelProfitRent.Location = new System.Drawing.Point(36, 121);
+            this.labelProfitRent.Name = "labelProfitRent";
+            this.labelProfitRent.Size = new System.Drawing.Size(145, 17);
+            this.labelProfitRent.TabIndex = 7;
+            this.labelProfitRent.Text = "Profit rent this month:";
+            // 
+            // labelTotalAptosNum
+            // 
+            this.labelTotalAptosNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalAptosNum.AutoSize = true;
+            this.labelTotalAptosNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalAptosNum.ForeColor = System.Drawing.Color.White;
+            this.labelTotalAptosNum.Location = new System.Drawing.Point(206, 54);
+            this.labelTotalAptosNum.Name = "labelTotalAptosNum";
+            this.labelTotalAptosNum.Size = new System.Drawing.Size(16, 17);
+            this.labelTotalAptosNum.TabIndex = 2;
+            this.labelTotalAptosNum.Text = "5";
+            this.labelTotalAptosNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalRooms
+            // 
+            this.labelTotalRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalRooms.AutoSize = true;
+            this.labelTotalRooms.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalRooms.ForeColor = System.Drawing.Color.White;
+            this.labelTotalRooms.Location = new System.Drawing.Point(36, 76);
+            this.labelTotalRooms.Name = "labelTotalRooms";
+            this.labelTotalRooms.Size = new System.Drawing.Size(81, 17);
+            this.labelTotalRooms.TabIndex = 3;
+            this.labelTotalRooms.Text = "Total rooms";
+            // 
+            // labelSummarize
+            // 
+            this.labelSummarize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSummarize.AutoSize = true;
+            this.labelSummarize.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummarize.ForeColor = System.Drawing.Color.White;
+            this.labelSummarize.Location = new System.Drawing.Point(15, 19);
+            this.labelSummarize.Name = "labelSummarize";
+            this.labelSummarize.Size = new System.Drawing.Size(117, 24);
+            this.labelSummarize.TabIndex = 0;
+            this.labelSummarize.Text = "Summarize:";
             // 
             // panel2
             // 
@@ -411,153 +558,6 @@
             this.labelPendings.TabIndex = 0;
             this.labelPendings.Text = "Pendings:";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(133)))), ((int)(((byte)(189)))));
-            this.panel3.Controls.Add(this.labelTotalAptos);
-            this.panel3.Controls.Add(this.labelTotalProfit);
-            this.panel3.Controls.Add(this.labelTotalTenantsNum);
-            this.panel3.Controls.Add(this.labelTotalRoomsNum);
-            this.panel3.Controls.Add(this.labelTotalTenants);
-            this.panel3.Controls.Add(this.labelProfitRent);
-            this.panel3.Controls.Add(this.labelTotalAptosNum);
-            this.panel3.Controls.Add(this.labelTotalRooms);
-            this.panel3.Controls.Add(this.labelSummarize);
-            this.panel3.Location = new System.Drawing.Point(327, 234);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(288, 177);
-            this.panel3.TabIndex = 3;
-            // 
-            // labelTotalAptos
-            // 
-            this.labelTotalAptos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalAptos.AutoSize = true;
-            this.labelTotalAptos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAptos.ForeColor = System.Drawing.Color.White;
-            this.labelTotalAptos.Location = new System.Drawing.Point(36, 54);
-            this.labelTotalAptos.Name = "labelTotalAptos";
-            this.labelTotalAptos.Size = new System.Drawing.Size(123, 17);
-            this.labelTotalAptos.TabIndex = 1;
-            this.labelTotalAptos.Text = "Total appartments:";
-            // 
-            // labelTotalTenantsNum
-            // 
-            this.labelTotalTenantsNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalTenantsNum.AutoSize = true;
-            this.labelTotalTenantsNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalTenantsNum.ForeColor = System.Drawing.Color.White;
-            this.labelTotalTenantsNum.Location = new System.Drawing.Point(206, 98);
-            this.labelTotalTenantsNum.Name = "labelTotalTenantsNum";
-            this.labelTotalTenantsNum.Size = new System.Drawing.Size(24, 17);
-            this.labelTotalTenantsNum.TabIndex = 6;
-            this.labelTotalTenantsNum.Text = "15";
-            this.labelTotalTenantsNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelTotalRoomsNum
-            // 
-            this.labelTotalRoomsNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalRoomsNum.AutoSize = true;
-            this.labelTotalRoomsNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalRoomsNum.ForeColor = System.Drawing.Color.White;
-            this.labelTotalRoomsNum.Location = new System.Drawing.Point(206, 76);
-            this.labelTotalRoomsNum.Name = "labelTotalRoomsNum";
-            this.labelTotalRoomsNum.Size = new System.Drawing.Size(16, 17);
-            this.labelTotalRoomsNum.TabIndex = 4;
-            this.labelTotalRoomsNum.Text = "2";
-            this.labelTotalRoomsNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelProfitRent
-            // 
-            this.labelProfitRent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelProfitRent.AutoSize = true;
-            this.labelProfitRent.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfitRent.ForeColor = System.Drawing.Color.White;
-            this.labelProfitRent.Location = new System.Drawing.Point(36, 121);
-            this.labelProfitRent.Name = "labelProfitRent";
-            this.labelProfitRent.Size = new System.Drawing.Size(145, 17);
-            this.labelProfitRent.TabIndex = 7;
-            this.labelProfitRent.Text = "Profit rent this month:";
-            // 
-            // labelTotalAptosNum
-            // 
-            this.labelTotalAptosNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalAptosNum.AutoSize = true;
-            this.labelTotalAptosNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAptosNum.ForeColor = System.Drawing.Color.White;
-            this.labelTotalAptosNum.Location = new System.Drawing.Point(206, 54);
-            this.labelTotalAptosNum.Name = "labelTotalAptosNum";
-            this.labelTotalAptosNum.Size = new System.Drawing.Size(16, 17);
-            this.labelTotalAptosNum.TabIndex = 2;
-            this.labelTotalAptosNum.Text = "5";
-            this.labelTotalAptosNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelTotalRooms
-            // 
-            this.labelTotalRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalRooms.AutoSize = true;
-            this.labelTotalRooms.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalRooms.ForeColor = System.Drawing.Color.White;
-            this.labelTotalRooms.Location = new System.Drawing.Point(36, 76);
-            this.labelTotalRooms.Name = "labelTotalRooms";
-            this.labelTotalRooms.Size = new System.Drawing.Size(81, 17);
-            this.labelTotalRooms.TabIndex = 3;
-            this.labelTotalRooms.Text = "Total rooms";
-            // 
-            // labelSummarize
-            // 
-            this.labelSummarize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSummarize.AutoSize = true;
-            this.labelSummarize.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSummarize.ForeColor = System.Drawing.Color.White;
-            this.labelSummarize.Location = new System.Drawing.Point(15, 19);
-            this.labelSummarize.Name = "labelSummarize";
-            this.labelSummarize.Size = new System.Drawing.Size(117, 24);
-            this.labelSummarize.TabIndex = 0;
-            this.labelSummarize.Text = "Summarize:";
-            // 
-            // labelTotalTenants
-            // 
-            this.labelTotalTenants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalTenants.AutoSize = true;
-            this.labelTotalTenants.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalTenants.ForeColor = System.Drawing.Color.White;
-            this.labelTotalTenants.Location = new System.Drawing.Point(36, 98);
-            this.labelTotalTenants.Name = "labelTotalTenants";
-            this.labelTotalTenants.Size = new System.Drawing.Size(91, 17);
-            this.labelTotalTenants.TabIndex = 5;
-            this.labelTotalTenants.Text = "Total tenants:";
-            // 
-            // labelTotalProfit
-            // 
-            this.labelTotalProfit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalProfit.AutoSize = true;
-            this.labelTotalProfit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalProfit.ForeColor = System.Drawing.Color.White;
-            this.labelTotalProfit.Location = new System.Drawing.Point(206, 121);
-            this.labelTotalProfit.Name = "labelTotalProfit";
-            this.labelTotalProfit.Size = new System.Drawing.Size(24, 17);
-            this.labelTotalProfit.TabIndex = 8;
-            this.labelTotalProfit.Text = "15";
-            this.labelTotalProfit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,18 +567,17 @@
             this.Controls.Add(this.labelSalute);
             this.Controls.Add(this.panelBody);
             this.Name = "StartPage";
-            this.Size = new System.Drawing.Size(742, 451);
-            this.Load += new System.EventHandler(this.StartPage_Load);
+            this.Size = new System.Drawing.Size(763, 456);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGearConfig)).EndInit();
             this.panelBody.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelPendings.ResumeLayout(false);
             this.panelPendings.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

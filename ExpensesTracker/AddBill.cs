@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ExpensesTracker
 {
-    public partial class StartPage : UserControl
+    public partial class AddBill : UserControl
     {
-        public StartPage()
+        public AddBill()
         {
             InitializeComponent();
         }

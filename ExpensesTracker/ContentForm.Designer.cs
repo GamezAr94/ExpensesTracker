@@ -40,8 +40,9 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.receiptsUserContent = new ExpensesTracker.Receipts();
+            this.addBillUserControl = new ExpensesTracker.AddBill();
             this.startPageUserContent = new ExpensesTracker.StartPage();
+            this.receiptsUserContent = new ExpensesTracker.Receipts();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuLogo)).BeginInit();
@@ -211,6 +212,7 @@
             // 
             // panelContent
             // 
+            this.panelContent.Controls.Add(this.addBillUserControl);
             this.panelContent.Controls.Add(this.startPageUserContent);
             this.panelContent.Controls.Add(this.receiptsUserContent);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -219,13 +221,13 @@
             this.panelContent.Size = new System.Drawing.Size(763, 456);
             this.panelContent.TabIndex = 9;
             // 
-            // receiptsUserContent
+            // addBillUserControl
             // 
-            this.receiptsUserContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receiptsUserContent.Location = new System.Drawing.Point(0, 0);
-            this.receiptsUserContent.Name = "receiptsUserContent";
-            this.receiptsUserContent.Size = new System.Drawing.Size(763, 456);
-            this.receiptsUserContent.TabIndex = 0;
+            this.addBillUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addBillUserControl.Location = new System.Drawing.Point(0, 0);
+            this.addBillUserControl.Name = "addBillUserControl";
+            this.addBillUserControl.Size = new System.Drawing.Size(763, 456);
+            this.addBillUserControl.TabIndex = 2;
             // 
             // startPageUserContent
             // 
@@ -234,6 +236,14 @@
             this.startPageUserContent.Name = "startPageUserContent";
             this.startPageUserContent.Size = new System.Drawing.Size(763, 456);
             this.startPageUserContent.TabIndex = 1;
+            // 
+            // receiptsUserContent
+            // 
+            this.receiptsUserContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.receiptsUserContent.Location = new System.Drawing.Point(0, 0);
+            this.receiptsUserContent.Name = "receiptsUserContent";
+            this.receiptsUserContent.Size = new System.Drawing.Size(763, 456);
+            this.receiptsUserContent.TabIndex = 0;
             // 
             // ContentForm
             // 
@@ -274,5 +284,6 @@
         private System.Windows.Forms.Panel panelContent;
         private Receipts receiptsUserContent;
         private StartPage startPageUserContent;
+        private AddBill addBillUserControl;
     }
 }

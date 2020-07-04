@@ -12,6 +12,7 @@ namespace ExpensesTracker
 {
     public partial class ContentForm : Form
     {
+        UserControl Active { get; set; }
         public ContentForm()
         {
             InitializeComponent();
@@ -19,8 +20,11 @@ namespace ExpensesTracker
         //initializing the form with the landing page in front and the panelSelectItem whit visible equals to false
         private void ContentForm_Load(object sender, EventArgs e)
         {
-            startPageUserContent.BringToFront();
             panelSelectedItem.Visible = false;
+            startPageUserContent.Visible = true;
+            Active = startPageUserContent;
+            addBillUserControl.Visible = false;
+            receiptsUserContent.Visible = false;
         }
 
         //the button will minimize the program
@@ -60,39 +64,46 @@ namespace ExpensesTracker
         #endregion Logo
 
         #region Menu Buttons behavior
-        //the button will bring to the front its user control, 
-        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
+        //the button will make visible the UserControl stored in the Active property and it will toggle the old object to visible false
         private void buttonAddReceipt_Click(object sender, EventArgs e)
         {
             if(panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonAddReceipt.Top)
             {
                 panelSelectedItem.Visible = false;
-                startPageUserContent.BringToFront();
-            }else
+                Active.Visible = false;
+                Active = startPageUserContent;
+                Active.Visible = true;
+            }
+            else
             {
+                Active.Visible = false;
+                Active = receiptsUserContent;
+                Active.Visible = true;
                 panelSelectedItem.Top = buttonAddReceipt.Top;
                 panelSelectedItem.Visible = true;
-                receiptsUserContent.BringToFront();
             }
         }
-        //the button will bring to the front its user control, 
-        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
+        //the button will make visible the UserControl stored in the Active property and it will toggle the old object to visible false
         private void buttonBills_Click(object sender, EventArgs e)
         {
             if (panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonBills.Top)
             {
                 panelSelectedItem.Visible = false;
-                startPageUserContent.BringToFront();
+                Active.Visible = false;
+                Active = startPageUserContent;
+                Active.Visible = true;
             }
             else
             {
+                Active.Visible = false;
+                Active = addBillUserControl;
+                Active.Visible = true;
+                startPageUserContent.Visible = false;
                 panelSelectedItem.Top = buttonBills.Top;
                 panelSelectedItem.Visible = true;
-                //add its own user controler
             }
         }
-        //the button will bring to the front its user control, 
-        //but if the control is already displayed, it will bring to the front the landing page and hide the panelSelectedItem
+        //the button will make visible the UserControl stored in the Active property and it will toggle the old object to visible false
         private void buttonExpenses_Click(object sender, EventArgs e)
         {
             if (panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonExpenses.Top)
