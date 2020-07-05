@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpensesTracker.Members;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,8 @@ namespace ExpensesTracker
 {
     public partial class MainForm : Form
     {
-        ContentForm contentForm = new ContentForm();
+        public static MembersList memberList;
+        ContentForm contentForm;
         public MainForm()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace ExpensesTracker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            memberList = DatabaseConnection.InitializingMembers();
         }
 
         private void textBoxPassword_Enter(object sender, EventArgs e)
@@ -63,8 +66,41 @@ namespace ExpensesTracker
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            contentForm.Show();
+            int index = memberList.FindIndex(x => x.Profile.Contains(textBoxUserName.Text));
+            string message = "Wrong password and/or user name\n Please try again.";
+            if(index >= 0)
+            {
+                if (memberList[index].Password == textBoxPassword.Text)
+                {
+                    contentForm = new ContentForm();
+                    contentForm.MainForm = this;
+                    this.Hide();
+                    contentForm.Show();
+
+                    textBoxPassword.PasswordChar = '\0';
+                    textBoxPassword.Text = "Password";
+
+                    textBoxUserName.Text = "User name";
+                }
+                else
+                {
+                    MessageBox.Show(message, "Error dectected in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    textBoxPassword.PasswordChar = '\0';
+                    textBoxPassword.Text = "Password";
+
+                    textBoxUserName.Text = "User name";
+                }
+            }
+            else
+            {
+                MessageBox.Show(message, "Error dectected in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                textBoxPassword.PasswordChar = '\0';
+                textBoxPassword.Text = "Password";
+
+                textBoxUserName.Text = "User name";
+            }
         }
     }
 }

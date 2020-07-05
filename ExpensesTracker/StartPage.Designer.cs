@@ -75,7 +75,7 @@
             // 
             this.labelSalute.AutoSize = true;
             this.labelSalute.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSalute.Location = new System.Drawing.Point(76, 4);
+            this.labelSalute.Location = new System.Drawing.Point(-6, 4);
             this.labelSalute.Name = "labelSalute";
             this.labelSalute.Size = new System.Drawing.Size(260, 41);
             this.labelSalute.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.labelNameUser.AutoSize = true;
             this.labelNameUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameUser.Location = new System.Drawing.Point(281, 4);
+            this.labelNameUser.Location = new System.Drawing.Point(236, 4);
             this.labelNameUser.Name = "labelNameUser";
             this.labelNameUser.Size = new System.Drawing.Size(117, 41);
             this.labelNameUser.TabIndex = 2;
@@ -114,7 +114,9 @@
             // 
             // panelBody
             // 
+            this.panelBody.Controls.Add(this.labelNameUser);
             this.panelBody.Controls.Add(this.pictureBoxGearConfig);
+            this.panelBody.Controls.Add(this.labelSalute);
             this.panelBody.Controls.Add(this.panel1);
             this.panelBody.Controls.Add(this.panel3);
             this.panelBody.Controls.Add(this.panel2);
@@ -563,13 +565,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelNameUser);
-            this.Controls.Add(this.labelSalute);
             this.Controls.Add(this.panelBody);
             this.Name = "StartPage";
             this.Size = new System.Drawing.Size(763, 456);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGearConfig)).EndInit();
             this.panelBody.ResumeLayout(false);
+            this.panelBody.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

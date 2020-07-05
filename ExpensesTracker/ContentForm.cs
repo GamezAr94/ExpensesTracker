@@ -12,6 +12,7 @@ namespace ExpensesTracker
 {
     public partial class ContentForm : Form
     {
+        public MainForm MainForm { get; set; }
         UserControl Active { get; set; }
         public ContentForm()
         {
@@ -119,5 +120,11 @@ namespace ExpensesTracker
             }
         }
         #endregion Menu buttons
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
+        }
     }
 }
