@@ -13,7 +13,7 @@ namespace ExpensesTracker
     public partial class ContentForm : Form
     {
         public MainForm MainForm { get; set; }
-        UserControl Active { get; set; }
+        UserControl ActiveUC { get; set; }
         public ContentForm()
         {
             InitializeComponent();
@@ -23,9 +23,14 @@ namespace ExpensesTracker
         {
             panelSelectedItem.Visible = false;
             startPageUserContent.Visible = true;
-            Active = startPageUserContent;
+            ActiveUC = startPageUserContent;
             addBillUserControl.Visible = false;
             receiptsUserContent.Visible = false;
+
+            startPageUserContent.LabelNameUser.Text = MainForm.ActiveMember.Name + " " + MainForm.ActiveMember.LastName;
+
+
+            buttonExpenses.Hide();
         }
 
         //the button will minimize the program
@@ -71,15 +76,15 @@ namespace ExpensesTracker
             if(panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonAddReceipt.Top)
             {
                 panelSelectedItem.Visible = false;
-                Active.Visible = false;
-                Active = startPageUserContent;
-                Active.Visible = true;
+                ActiveUC.Visible = false;
+                ActiveUC = startPageUserContent;
+                ActiveUC.Visible = true;
             }
             else
             {
-                Active.Visible = false;
-                Active = receiptsUserContent;
-                Active.Visible = true;
+                ActiveUC.Visible = false;
+                ActiveUC = receiptsUserContent;
+                ActiveUC.Visible = true;
                 panelSelectedItem.Top = buttonAddReceipt.Top;
                 panelSelectedItem.Visible = true;
             }
@@ -90,15 +95,15 @@ namespace ExpensesTracker
             if (panelSelectedItem.Visible == true && panelSelectedItem.Top == buttonBills.Top)
             {
                 panelSelectedItem.Visible = false;
-                Active.Visible = false;
-                Active = startPageUserContent;
-                Active.Visible = true;
+                ActiveUC.Visible = false;
+                ActiveUC = startPageUserContent;
+                ActiveUC.Visible = true;
             }
             else
             {
-                Active.Visible = false;
-                Active = addBillUserControl;
-                Active.Visible = true;
+                ActiveUC.Visible = false;
+                ActiveUC = addBillUserControl;
+                ActiveUC.Visible = true;
                 startPageUserContent.Visible = false;
                 panelSelectedItem.Top = buttonBills.Top;
                 panelSelectedItem.Visible = true;

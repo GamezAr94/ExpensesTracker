@@ -13,7 +13,8 @@ namespace ExpensesTracker
 {
     public partial class MainForm : Form
     {
-        public static MembersList memberList;
+        MembersList memberList;
+        public Member ActiveMember { get; set; }
         ContentForm contentForm;
         public MainForm()
         {
@@ -70,7 +71,7 @@ namespace ExpensesTracker
             string message = "Wrong password and/or user name\n Please try again.";
             if(index >= 0)
             {
-                if (memberList[index].Password == textBoxPassword.Text)
+                if ((ActiveMember = memberList[index]).Password == textBoxPassword.Text)
                 {
                     contentForm = new ContentForm();
                     contentForm.MainForm = this;

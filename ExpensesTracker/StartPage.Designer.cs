@@ -568,6 +568,7 @@
             this.Controls.Add(this.panelBody);
             this.Name = "StartPage";
             this.Size = new System.Drawing.Size(763, 456);
+            this.Load += new System.EventHandler(this.StartPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGearConfig)).EndInit();
             this.panelBody.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
