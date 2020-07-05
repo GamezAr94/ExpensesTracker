@@ -31,7 +31,7 @@
             this.labelSalute = new System.Windows.Forms.Label();
             this.labelNameUser = new System.Windows.Forms.Label();
             this.pictureBoxGearConfig = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIcono = new System.Windows.Forms.Label();
             this.panelBody = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTotalRent = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             // 
             this.labelSalute.AutoSize = true;
             this.labelSalute.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSalute.Location = new System.Drawing.Point(-6, 4);
+            this.labelSalute.Location = new System.Drawing.Point(78, 0);
             this.labelSalute.Name = "labelSalute";
             this.labelSalute.Size = new System.Drawing.Size(260, 41);
             this.labelSalute.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.labelNameUser.AutoSize = true;
             this.labelNameUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameUser.Location = new System.Drawing.Point(236, 4);
+            this.labelNameUser.Location = new System.Drawing.Point(322, 0);
             this.labelNameUser.Name = "labelNameUser";
             this.labelNameUser.Size = new System.Drawing.Size(117, 41);
             this.labelNameUser.TabIndex = 2;
@@ -95,36 +95,34 @@
             // 
             this.pictureBoxGearConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxGearConfig.Image = global::ExpensesTracker.Properties.Resources.gearIcon;
-            this.pictureBoxGearConfig.Location = new System.Drawing.Point(641, 418);
+            this.pictureBoxGearConfig.Location = new System.Drawing.Point(640, 354);
             this.pictureBoxGearConfig.Name = "pictureBoxGearConfig";
             this.pictureBoxGearConfig.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxGearConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGearConfig.TabIndex = 1;
             this.pictureBoxGearConfig.TabStop = false;
             // 
-            // label1
+            // labelIcono
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "<Icono>";
+            this.labelIcono.AutoSize = true;
+            this.labelIcono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIcono.Location = new System.Drawing.Point(5, 16);
+            this.labelIcono.Name = "labelIcono";
+            this.labelIcono.Size = new System.Drawing.Size(67, 20);
+            this.labelIcono.TabIndex = 0;
+            this.labelIcono.Text = "<Icono>";
             // 
             // panelBody
             // 
-            this.panelBody.Controls.Add(this.labelNameUser);
+            this.panelBody.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBody.Controls.Add(this.pictureBoxGearConfig);
-            this.panelBody.Controls.Add(this.labelSalute);
             this.panelBody.Controls.Add(this.panel1);
             this.panelBody.Controls.Add(this.panel3);
             this.panelBody.Controls.Add(this.panel2);
             this.panelBody.Controls.Add(this.panelPendings);
-            this.panelBody.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBody.Location = new System.Drawing.Point(82, 0);
+            this.panelBody.Location = new System.Drawing.Point(82, 64);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(681, 456);
+            this.panelBody.Size = new System.Drawing.Size(681, 392);
             this.panelBody.TabIndex = 3;
             // 
             // panel1
@@ -135,7 +133,7 @@
             this.panel1.Controls.Add(this.labelRentTotal);
             this.panel1.Controls.Add(this.labelMaitenance);
             this.panel1.Controls.Add(this.labelExpenses);
-            this.panel1.Location = new System.Drawing.Point(325, 67);
+            this.panel1.Location = new System.Drawing.Point(328, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 161);
             this.panel1.TabIndex = 1;
@@ -224,7 +222,7 @@
             this.panel3.Controls.Add(this.labelTotalAptosNum);
             this.panel3.Controls.Add(this.labelTotalRooms);
             this.panel3.Controls.Add(this.labelSummarize);
-            this.panel3.Location = new System.Drawing.Point(327, 234);
+            this.panel3.Location = new System.Drawing.Point(330, 186);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(288, 177);
             this.panel3.TabIndex = 3;
@@ -365,7 +363,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.labelRentCollectedTotal);
             this.panel2.Controls.Add(this.labelCollected);
-            this.panel2.Location = new System.Drawing.Point(31, 234);
+            this.panel2.Location = new System.Drawing.Point(34, 186);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 177);
             this.panel2.TabIndex = 2;
@@ -425,7 +423,7 @@
             this.panelPendings.Controls.Add(this.labelEmptyRoomsThisMTotal);
             this.panelPendings.Controls.Add(this.labelEmptyRoomsNxtM);
             this.panelPendings.Controls.Add(this.labelPendings);
-            this.panelPendings.Location = new System.Drawing.Point(31, 67);
+            this.panelPendings.Location = new System.Drawing.Point(34, 19);
             this.panelPendings.Name = "panelPendings";
             this.panelPendings.Size = new System.Drawing.Size(288, 161);
             this.panelPendings.TabIndex = 0;
@@ -564,13 +562,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNameUser);
+            this.Controls.Add(this.labelSalute);
+            this.Controls.Add(this.labelIcono);
             this.Controls.Add(this.panelBody);
             this.Name = "StartPage";
             this.Size = new System.Drawing.Size(763, 456);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGearConfig)).EndInit();
             this.panelBody.ResumeLayout(false);
-            this.panelBody.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -589,7 +588,7 @@
         private System.Windows.Forms.Label labelSalute;
         private System.Windows.Forms.Label labelNameUser;
         private System.Windows.Forms.PictureBox pictureBoxGearConfig;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIcono;
         private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTotalRent;
