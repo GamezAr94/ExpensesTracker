@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExpensesTracker
+namespace ExpensesTracker.Common.Members
 {
     public class Member
     {

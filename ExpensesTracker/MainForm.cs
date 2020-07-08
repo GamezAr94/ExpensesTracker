@@ -1,4 +1,6 @@
-﻿using ExpensesTracker.Members;
+﻿using ExpensesTracker.Business;
+using ExpensesTracker.Common.Members;
+using ExpensesTracker.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,6 @@ namespace ExpensesTracker
 {
     public partial class MainForm : Form
     {
-        MembersList memberList;
-        public Member ActiveMember { get; set; }
-        ContentForm contentForm;
         public MainForm()
         {
             InitializeComponent();
@@ -23,7 +22,6 @@ namespace ExpensesTracker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            memberList = DatabaseConnection.InitializingMembers();
         }
 
         private void textBoxPassword_Enter(object sender, EventArgs e)
@@ -67,40 +65,29 @@ namespace ExpensesTracker
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            int index = memberList.FindIndex(x => x.Profile.Contains(textBoxUserName.Text));
-            string message = "Wrong password and/or user name\n Please try again.";
-            if(index >= 0)
+            Member activeMember = MemberValidation.LoginMember(textBoxUserName.Text, textBoxPassword.Text);
+            if(activeMember != null)
             {
-                if ((ActiveMember = memberList[index]).Password == textBoxPassword.Text)
-                {
-                    contentForm = new ContentForm();
-                    contentForm.MainForm = this;
-                    this.Hide();
-                    contentForm.Show();
-
-                    textBoxPassword.PasswordChar = '\0';
-                    textBoxPassword.Text = "Password";
-
-                    textBoxUserName.Text = "User name";
-                }
-                else
-                {
-                    MessageBox.Show(message, "Error dectected in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    textBoxPassword.PasswordChar = '\0';
-                    textBoxPassword.Text = "Password";
-
-                    textBoxUserName.Text = "User name";
-                }
-            }
-            else
-            {
-                MessageBox.Show(message, "Error dectected in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MemberViewModel.ActiveMember = activeMember;
+                ContentForm contentForm = new ContentForm() { MainForm = this };
+                this.Hide();
+                contentForm.Show();
 
                 textBoxPassword.PasswordChar = '\0';
                 textBoxPassword.Text = "Password";
 
                 textBoxUserName.Text = "User name";
+            }
+            else
+            {
+                if (MemberValidation.ErrorMessage == "")
+                {
+                    MessageBox.Show("User Name or Password incorrect", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(MemberValidation.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
