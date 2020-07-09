@@ -65,6 +65,10 @@ namespace ExpensesTracker
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            ContentForm contentForm = new ContentForm() { MainForm = this };
+            this.Hide();
+            contentForm.Show();
+           /* 
             Member activeMember = MemberValidation.LoginMember(textBoxUserName.Text, textBoxPassword.Text);
             if(activeMember != null)
             {
@@ -88,7 +92,7 @@ namespace ExpensesTracker
                 {
                     MessageBox.Show(MemberValidation.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+            }*/
         }
     }
 }

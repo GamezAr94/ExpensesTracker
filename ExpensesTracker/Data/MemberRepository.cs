@@ -20,7 +20,7 @@ namespace ExpensesTracker.Data
             Member activeMember = null;
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                string query = @"SELECT *
+                string query = @"SELECT id_member, name_member, lastName_member, phone_member, type_member, profile_member, email_member, passwor_member
                                 FROM members
                                 WHERE (email_member LIKE @user OR profile_member LIKE @user) AND passwor_member LIKE @pass;";
                 using (MySqlCommand cmd = new MySqlCommand(query))
@@ -52,8 +52,7 @@ namespace ExpensesTracker.Data
                             password = reader["passwor_member"] as string;
                             type = reader["type_member"] as string;
                             id = (int)reader["id_member"];
-                            // phone = reader.IsDBNull(7) ? null : reader["phone_members"] as string;
-                            phone = "58";
+                            phone = reader.IsDBNull(3) ? null : reader["phone_member"] as string;
                             activeMember = new Member(){                                
                                 Name = name,
                                 LastName = lName,
@@ -70,13 +69,13 @@ namespace ExpensesTracker.Data
             }
             return activeMember;
         }
-        /*
-        public static MembersList InitializingMembers()
+        
+        public static MembersList GetMembers()
         {
             MembersList membersList;
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                string query = @"SELECT *
+                string query = @"SELECT id_member, name_member, lastName_member, phone_member, type_member, profile_member, email_member, passwor_member
                                 FROM members;";
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
@@ -104,8 +103,7 @@ namespace ExpensesTracker.Data
                             password = reader["passwor_member"] as string;
                             type = reader["type_member"] as string;
                             id = (int)reader["id_member"];
-                            // phone = reader.IsDBNull(7) ? null : reader["phone_members"] as string;
-                            phone = "58";
+                            phone = reader.IsDBNull(3) ? null : reader["phone_member"] as string;
                             membersList.Add(new Member()
                             {
                                 Name = name,
@@ -123,6 +121,5 @@ namespace ExpensesTracker.Data
             }
             return membersList;
         }
-        */
     }
 }

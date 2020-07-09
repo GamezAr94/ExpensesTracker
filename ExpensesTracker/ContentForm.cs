@@ -27,7 +27,7 @@ namespace ExpensesTracker
             addBillUserControl.Visible = false;
             receiptsUserContent.Visible = false;
 
-            startPageUserContent.LabelNameUser.Text = MemberViewModel.ActiveMember.Name + " " + MemberViewModel.ActiveMember.LastName;
+            startPageUserContent.LabelNameUser.Text = $"{MemberViewModel.ActiveMember.Name}  {MemberViewModel.ActiveMember.LastName}";
 
 
             buttonExpenses.Hide();

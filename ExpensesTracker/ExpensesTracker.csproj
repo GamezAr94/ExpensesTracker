@@ -54,6 +54,8 @@
       <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\MemberValidation.cs" />
+    <Compile Include="Common\Expenses\Expenses.cs" />
+    <Compile Include="Common\Expenses\ExpensesList.cs" />
     <Compile Include="ContentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +63,7 @@
       <DependentUpon>ContentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\MemberRepository.cs" />
+    <Compile Include="Data\PurchaseRepository.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +75,7 @@
     <Compile Include="MemberViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchasesViewModel.cs" />
     <Compile Include="Receipts.cs">
       <SubType>UserControl</SubType>
     </Compile>
