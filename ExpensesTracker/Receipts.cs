@@ -273,7 +273,7 @@ namespace ExpensesTracker
                     if (rowsAffected == 0)
                     {
                         errorProvider1.SetError(buttonAdd, "No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify it in the Notes section and try again.");
-                        labelMessage.Text = "No DB changes were made\nPlease revise if the data is correct";
+                        labelMessage.Text = "No DB changes were made\nPlease revise if the data is not repeated";
                     }
                     else
                     {

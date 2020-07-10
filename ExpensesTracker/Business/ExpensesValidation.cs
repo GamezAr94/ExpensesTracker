@@ -91,7 +91,7 @@ namespace ExpensesTracker.Business
         {
             if (Validator(purchase))
             {
-                return PurchaseRepository.EditRecord(purchase);
+                return PurchaseRepository.EditRecord(UppercaseFirst(purchase));
             }
             return -1;
         }

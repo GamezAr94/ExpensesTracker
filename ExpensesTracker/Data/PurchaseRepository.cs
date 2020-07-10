@@ -100,14 +100,17 @@ namespace ExpensesTracker.Data
             int rowsAffected;
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                string query = $@"UPDATE purchase
+                string query = @"IF NOT EXISTS (SELECT * FROM purchase WHERE notes_purchase = @notes AND date_purchase = @date AND amount_purchase = @amount AND category_purchase = @category AND info_purchase = @info)
+                                THEN
+                                  UPDATE purchase
                                   SET date_purchase = @date, 
                                     amount_purchase = @amount, 
                                     category_purchase = @category, 
                                     info_purchase = @info, 
                                     notes_purchase = @notes,
                                     type_purchase = @type
-                                  WHERE id_purchase = @productId";
+                                  WHERE id_purchase = @productId;
+                                END IF;";
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;
