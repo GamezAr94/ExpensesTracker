@@ -247,6 +247,8 @@ namespace ExpensesTracker
             {
                 Expenses expens = purchasesVM.GetDisplayPurchase();
                 EditingForm(expens);
+                dataGridViewReceiptsInfo.Rows[index].Selected = true;
+                dataGridViewReceiptsInfo.FirstDisplayedScrollingRowIndex = dataGridViewReceiptsInfo.SelectedRows[0].Index;
             }
 
 
@@ -262,9 +264,6 @@ namespace ExpensesTracker
                 rowsAffected = ExpensesValidation.EditRecord(purchase);
                 if (rowsAffected > 0)
                 {
-                    //creates a new empty object to set the form for a new record, changuing manually the combobox 
-                    purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
-                    comboBoxCategory.SelectedIndex = -1;
                     errorProvider1.SetError(buttonAdd, string.Empty);
                     labelMessage.Text = string.Empty;
                     refreshListBox();
@@ -281,8 +280,13 @@ namespace ExpensesTracker
                         errorProvider1.SetError(buttonAdd, ExpensesValidation.MessageError);
                         labelMessage.Text = ExpensesValidation.MessageError;
                     }
+
                 }
-            }catch(MySqlException ex)
+                //creates a new empty object to set the form for a new record, changuing manually the combobox 
+                purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+                comboBoxCategory.SelectedIndex = -1;
+            }
+            catch(MySqlException ex)
             {
                 MessageBox.Show(ex.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -306,12 +310,12 @@ namespace ExpensesTracker
                 }
                 else
                 {
-                    //creates a new empty object to set the form for a new record, changuing manually the combobox 
-                    purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
-                    comboBoxCategory.SelectedIndex = -1;
                     labelMessage.Text = string.Empty;
                     refreshListBox();
                 }
+                //creates a new empty object to set the form for a new record, changuing manually the combobox 
+                purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+                comboBoxCategory.SelectedIndex = -1;
             }
             catch (MySqlException ex)
             {

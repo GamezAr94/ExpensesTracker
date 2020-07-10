@@ -97,7 +97,38 @@ namespace ExpensesTracker.Data
 
         internal static int EditRecord(Expenses purchase)
         {
-            throw new NotImplementedException();
+            int rowsAffected;
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                string query = $@"UPDATE purchase
+                                  SET date_purchase = @date, 
+                                    amount_purchase = @amount, 
+                                    category_purchase = @category, 
+                                    info_purchase = @info, 
+                                    notes_purchase = @notes,
+                                    type_purchase = @type
+                                  WHERE id_purchase = @productId";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    cmd.Parameters.AddWithValue("type", purchase.Type);
+                    cmd.Parameters.AddWithValue("productId", purchase.Id);
+                    cmd.Parameters.AddWithValue("date", purchase.Date);
+                    cmd.Parameters.AddWithValue("amount", purchase.Amount);
+                    cmd.Parameters.AddWithValue("category", purchase.Category);
+                    cmd.Parameters.AddWithValue("info", purchase.Information);
+                    cmd.Parameters.AddWithValue("notes", (object)purchase.Notes ?? DBNull.Value);
+
+                    conn.Open();
+
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            return rowsAffected;
         }
 
         internal static int DeleteExpenses(Expenses purchase)
