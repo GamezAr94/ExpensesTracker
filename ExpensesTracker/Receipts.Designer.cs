@@ -52,6 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.labelInstruction = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceiptsInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -286,10 +287,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(40)))), ((int)(((byte)(10)))));
+            this.labelMessage.Location = new System.Drawing.Point(343, 46);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(83, 15);
+            this.labelMessage.TabIndex = 22;
+            this.labelMessage.Text = "<Message>";
+            // 
             // Receipts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.labelInstruction);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -347,5 +360,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelInstruction;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label labelMessage;
     }
 }

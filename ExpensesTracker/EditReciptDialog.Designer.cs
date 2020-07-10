@@ -102,6 +102,7 @@
             this.buttonEdit.TabIndex = 60;
             this.buttonEdit.Text = "Edi&t";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 

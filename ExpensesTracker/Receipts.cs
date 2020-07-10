@@ -32,6 +32,7 @@ namespace ExpensesTracker
             FormatDayPickers();
             setBindings();
             setupDataGridView();
+            labelMessage.Text = string.Empty;
         }
 
 
@@ -155,6 +156,7 @@ namespace ExpensesTracker
                     comboBoxCategory.SelectedIndex = -1;
                     purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
                     errorProvider1.SetError(buttonAdd, string.Empty);
+                    labelMessage.Text = string.Empty;
                 }
                 else
                 {
@@ -162,11 +164,13 @@ namespace ExpensesTracker
                     {
                         //MessageBox.Show("No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify in the Notes section and try again.", "Zero Affected Rows", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         errorProvider1.SetError(buttonAdd, "No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify it in the Notes section and try again.");
+                        labelMessage.Text = "Probable repetition of data\nPlease check your entry if is not repeated\nif you want to repeat this entry\nplease provide details on Notes section";
                     }
                     else
                     {
                         //MessageBox.Show(ExpensesValidation.MessageError, "Validation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         errorProvider1.SetError(buttonAdd, ExpensesValidation.MessageError);
+                        labelMessage.Text = ExpensesValidation.MessageError;
                     }
                 }
                 dateTimePickerDay.Select();
@@ -182,7 +186,7 @@ namespace ExpensesTracker
         }
 
 
-        #region TextBoxAmount selectAll() when focus or click
+        #region TextBoxAmount selectAll() the content when focus or click
         private void textBoxAmount_Enter(object sender, EventArgs e)
         {
             textBoxAmount.Select();
@@ -193,7 +197,7 @@ namespace ExpensesTracker
             textBoxAmount.Select();
             textBoxAmount.SelectAll();
         }
-        #endregion TextBoxAmount selectAll() when focus or click
+        #endregion TextBoxAmount
 
 
         //refresh the listBox
@@ -219,24 +223,76 @@ namespace ExpensesTracker
 
         private void dataGridViewReceiptsInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = Math.Max(0, dataGridViewReceiptsInfo.CurrentRow.Index);
+            //Creating a new DialogBox
             EditReciptDialog edit = new EditReciptDialog();
             edit.PurchaseVM = this.purchasesVM;
 
+            //saving the index of the row to acces to the Expenses list and get the info of that purchase and store on the PurchassVM
+            //also set the category manually to avoid bugs
+            int index = Math.Max(0, dataGridViewReceiptsInfo.CurrentRow.Index);
             Expenses purchase = purchasesVM.Purchases[index];
             purchasesVM.SetDisplayPurchase(purchase);
+
             purchasesVM.Purchase.Category = purchasesVM.Purchases[index].Category;
 
+            //stores the response of the user
             DialogResult result = edit.ShowDialog();
-            if(result == DialogResult.OK)
+
+            if (result == DialogResult.OK)
             {
-                DeletingForm(purchase);
+                Expenses expens = purchasesVM.GetDisplayPurchase();
+                DeletingForm(expens);
             }
-            purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
-            comboBoxCategory.SelectedIndex = -1;
+            if (result == DialogResult.Yes)
+            {
+                Expenses expens = purchasesVM.GetDisplayPurchase();
+                EditingForm(expens);
+            }
+
 
             edit.Dispose();
         }
+
+        //Method to edit a record from the data grid
+        private void EditingForm(Expenses purchase)
+        {
+            try
+            {
+                int rowsAffected;
+                rowsAffected = ExpensesValidation.EditRecord(purchase);
+                if (rowsAffected > 0)
+                {
+                    //creates a new empty object to set the form for a new record, changuing manually the combobox 
+                    purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+                    comboBoxCategory.SelectedIndex = -1;
+                    errorProvider1.SetError(buttonAdd, string.Empty);
+                    labelMessage.Text = string.Empty;
+                    refreshListBox();
+                }
+                else
+                {
+                    if (rowsAffected == 0)
+                    {
+                        errorProvider1.SetError(buttonAdd, "No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify it in the Notes section and try again.");
+                        labelMessage.Text = "No DB changes were made\nPlease revise if the data is correct";
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(buttonAdd, ExpensesValidation.MessageError);
+                        labelMessage.Text = ExpensesValidation.MessageError;
+                    }
+                }
+            }catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Method to delete a record from the datagrid
         private void DeletingForm(Expenses purchase)
         {
             try
@@ -246,9 +302,14 @@ namespace ExpensesTracker
                 if (rowsAffected <= 0)
                 {
                     MessageBox.Show("No changes were made");
+                    labelMessage.Text = "Entry not deleted";
                 }
                 else
                 {
+                    //creates a new empty object to set the form for a new record, changuing manually the combobox 
+                    purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+                    comboBoxCategory.SelectedIndex = -1;
+                    labelMessage.Text = string.Empty;
                     refreshListBox();
                 }
             }

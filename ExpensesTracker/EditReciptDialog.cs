@@ -54,5 +54,10 @@ namespace ExpensesTracker
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Yes;
+        }
     }
 }

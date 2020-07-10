@@ -86,5 +86,14 @@ namespace ExpensesTracker.Business
         {
             return PurchaseRepository.DeleteExpenses(purchase);
         }
+
+        internal static int EditRecord(Expenses purchase)
+        {
+            if (Validator(purchase))
+            {
+                return PurchaseRepository.EditRecord(purchase);
+            }
+            return -1;
+        }
     }
 }

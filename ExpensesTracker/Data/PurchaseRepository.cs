@@ -95,6 +95,11 @@ namespace ExpensesTracker.Data
             return rowsAffected;
         }
 
+        internal static int EditRecord(Expenses purchase)
+        {
+            throw new NotImplementedException();
+        }
+
         internal static int DeleteExpenses(Expenses purchase)
         {
             int rowsAffected;
