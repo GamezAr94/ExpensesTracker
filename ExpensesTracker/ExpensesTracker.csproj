@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="Data\MemberRepository.cs" />
     <Compile Include="Data\PurchaseRepository.cs" />
+    <Compile Include="EditReciptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReciptDialog.Designer.cs">
+      <DependentUpon>EditReciptDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContentForm.resx">
       <DependentUpon>ContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReciptDialog.resx">
+      <DependentUpon>EditReciptDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

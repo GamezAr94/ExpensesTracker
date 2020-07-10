@@ -82,5 +82,9 @@ namespace ExpensesTracker.Business
             }
             return !(errors.Count > 0);
         }
+        public static int DeleteExpenses(Expenses purchase)
+        {
+            return PurchaseRepository.DeleteExpenses(purchase);
+        }
     }
 }

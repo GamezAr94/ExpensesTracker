@@ -150,6 +150,8 @@ namespace ExpensesTracker
                 if (rowsAffected > 0)
                 {
                     refreshListBox();
+
+                    //reset the values in the form an create an empty purchase
                     comboBoxCategory.SelectedIndex = -1;
                     purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
                     errorProvider1.SetError(buttonAdd, string.Empty);
@@ -217,7 +219,47 @@ namespace ExpensesTracker
 
         private void dataGridViewReceiptsInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(e.RowIndex.ToString());
+            int index = Math.Max(0, dataGridViewReceiptsInfo.CurrentRow.Index);
+            EditReciptDialog edit = new EditReciptDialog();
+            edit.PurchaseVM = this.purchasesVM;
+
+            Expenses purchase = purchasesVM.Purchases[index];
+            purchasesVM.SetDisplayPurchase(purchase);
+            purchasesVM.Purchase.Category = purchasesVM.Purchases[index].Category;
+
+            DialogResult result = edit.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                DeletingForm(purchase);
+            }
+            purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+            comboBoxCategory.SelectedIndex = -1;
+
+            edit.Dispose();
+        }
+        private void DeletingForm(Expenses purchase)
+        {
+            try
+            {
+                int rowsAffected;
+                rowsAffected = ExpensesValidation.DeleteExpenses(purchase);
+                if (rowsAffected <= 0)
+                {
+                    MessageBox.Show("No changes were made");
+                }
+                else
+                {
+                    refreshListBox();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

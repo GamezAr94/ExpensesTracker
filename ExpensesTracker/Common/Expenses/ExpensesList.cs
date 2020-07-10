@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExpensesTracker.Common.Expenses
 {
-    class ExpensesList:List<Expenses>
+    public class ExpensesList:List<Expenses>
     {
     }
 }

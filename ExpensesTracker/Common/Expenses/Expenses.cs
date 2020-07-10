@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExpensesTracker.Common.Expenses
 {
-    class Expenses
+    public class Expenses
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }

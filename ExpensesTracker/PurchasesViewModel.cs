@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ExpensesTracker
 {
-    class PurchasesViewModel:INotifyPropertyChanged
+    public class PurchasesViewModel:INotifyPropertyChanged
     {
         #region setting the eventhandler
         public event PropertyChangedEventHandler PropertyChanged;

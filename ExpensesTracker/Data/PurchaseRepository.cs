@@ -94,5 +94,27 @@ namespace ExpensesTracker.Data
             }
             return rowsAffected;
         }
+
+        internal static int DeleteExpenses(Expenses purchase)
+        {
+            int rowsAffected;
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                string query = $@"DELETE FROM purchase
+                                    WHERE id_purchase = @purchaseId;";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("purchaseId", purchase.Id);
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            return rowsAffected;
+        }
     }
 }
