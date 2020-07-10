@@ -53,6 +53,7 @@
     <Compile Include="AddBill.Designer.cs">
       <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Business\ExpensesValidation.cs" />
     <Compile Include="Business\MemberValidation.cs" />
     <Compile Include="Common\Expenses\Expenses.cs" />
     <Compile Include="Common\Expenses\ExpensesList.cs" />

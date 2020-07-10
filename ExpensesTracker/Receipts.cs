@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExpensesTracker.Data;
+using ExpensesTracker.Common.Expenses;
+using ExpensesTracker.Business;
+using MySql.Data.MySqlClient;
 
 namespace ExpensesTracker
 {
@@ -19,19 +22,42 @@ namespace ExpensesTracker
             InitializeComponent();
         }
 
+
+        //default constructor will initialize a purchaseViewModel object and sets the Date property to todays date
+        //it will call the format for the datePickers, set the bindings and set the data grid view
         private void Receipts_Load(object sender, EventArgs e)
         {
             purchasesVM = new PurchasesViewModel();
+            purchasesVM.Purchase.Date = DateTime.Today;
             FormatDayPickers();
             setBindings();
             setupDataGridView();
         }
+
+
+        //it will create the bindings to all the form data
         private void setBindings()
         {
+            textBoxAmount.DataBindings.Add("Text", purchasesVM, "Purchase.Amount", 
+                                    true, DataSourceUpdateMode.OnPropertyChanged);
+            dateTimePickerDay.DataBindings.Add("Value", purchasesVM, "Purchase.Date",
+                                    true,DataSourceUpdateMode.OnPropertyChanged);
+            dateTimePickerMonth.DataBindings.Add("Value", purchasesVM, "Purchase.Date", 
+                                    true, DataSourceUpdateMode.OnPropertyChanged);
+            dateTimePickerYear.DataBindings.Add("Value", purchasesVM, "Purchase.Date", 
+                                    true, DataSourceUpdateMode.OnPropertyChanged);
+            comboBoxCategory.DataBindings.Add("Text", purchasesVM, "Purchase.Category");
+            textBoxInformation.DataBindings.Add("Text", purchasesVM, "Purchase.Information",
+                                    true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxNotes.DataBindings.Add("Text", purchasesVM, "Purchase.Notes",
+                                    true, DataSourceUpdateMode.OnPropertyChanged);
+
             dataGridViewReceiptsInfo.AutoGenerateColumns = false;
-            //dataGridViewReceiptsInfo.DataSource = purchasesVM.Purchases;
-            dataGridViewReceiptsInfo.DataSource = PurchaseRepository.GetExpenses();
+            dataGridViewReceiptsInfo.DataSource = purchasesVM.Purchases;
         }
+
+
+        //it will create the view of the data grid
         private void setupDataGridView()
         {
             dataGridViewReceiptsInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -95,6 +121,8 @@ namespace ExpensesTracker
             dataGridViewReceiptsInfo.Columns.Add(notes);
         }
 
+
+        //it will give proper format to the daypickers day, month and year
         private void FormatDayPickers()
         {
             dateTimePickerDay.Format = DateTimePickerFormat.Custom;
@@ -102,11 +130,94 @@ namespace ExpensesTracker
 
 
             dateTimePickerMonth.Format = DateTimePickerFormat.Custom;
-            dateTimePickerMonth.CustomFormat = "MM";
+            dateTimePickerMonth.CustomFormat = "MMM";
 
 
             dateTimePickerYear.Format = DateTimePickerFormat.Custom;
             dateTimePickerYear.CustomFormat = "yyyy";
+        }
+
+
+        //Try to add the data from the fields with cash type, if it has rows affected it will reset the comboBox, the error provider and it will create a new Expenses with the current date
+        //if not it will shows an error provider depends of the error
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int rowsAffected;
+                purchasesVM.Purchase.Type = "Cash";
+                rowsAffected = ExpensesValidation.AddExpenses(purchasesVM.GetDisplayPurchase());
+                if (rowsAffected > 0)
+                {
+                    refreshListBox();
+                    comboBoxCategory.SelectedIndex = -1;
+                    purchasesVM.SetDisplayPurchase(new Expenses() { Date = DateTime.Today });
+                    errorProvider1.SetError(buttonAdd, string.Empty);
+                }
+                else
+                {
+                    if (rowsAffected == 0)
+                    {
+                        //MessageBox.Show("No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify in the Notes section and try again.", "Zero Affected Rows", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        errorProvider1.SetError(buttonAdd, "No DB changes were made\n\nPlease revise if the data is correct or if the data provided is not duplicated with an existing field\n\nIf you want to add duplicated data please specify it in the Notes section and try again.");
+                    }
+                    else
+                    {
+                        //MessageBox.Show(ExpensesValidation.MessageError, "Validation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        errorProvider1.SetError(buttonAdd, ExpensesValidation.MessageError);
+                    }
+                }
+                dateTimePickerDay.Select();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message + "\nPlease save this message and contact with technical support.", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\nPlease save this message and contact with technical support.", "Processing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        #region TextBoxAmount selectAll() when focus or click
+        private void textBoxAmount_Enter(object sender, EventArgs e)
+        {
+            textBoxAmount.Select();
+            textBoxAmount.SelectAll();
+        }
+        private void textBoxAmount_Click(object sender, EventArgs e)
+        {
+            textBoxAmount.Select();
+            textBoxAmount.SelectAll();
+        }
+        #endregion TextBoxAmount selectAll() when focus or click
+
+
+        //refresh the listBox
+        private void refreshListBox()
+        {
+            purchasesVM.Purchases = PurchaseRepository.GetExpenses();
+            dataGridViewReceiptsInfo.DataSource = purchasesVM.Purchases;
+        }
+
+
+        //revises if the category combo box has some option selected if not displays an errorProvider
+        private void comboBoxCategory_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                purchasesVM.Purchase.Category = comboBoxCategory.SelectedItem.ToString();
+                errorProvider1.SetError(comboBoxCategory, string.Empty);
+            }catch(Exception ex)
+            {
+                errorProvider1.SetError(comboBoxCategory, "Must select a category before to continue");
+            }
+        }
+
+        private void dataGridViewReceiptsInfo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(e.RowIndex.ToString());
         }
     }
 }

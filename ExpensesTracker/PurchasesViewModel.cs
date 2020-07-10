@@ -12,17 +12,21 @@ namespace ExpensesTracker
 {
     class PurchasesViewModel:INotifyPropertyChanged
     {
+        #region setting the eventhandler
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion setting the eventhandler
 
+        //default constructor initializing a new list with the repository of all the expenses and a new Purchase with an empty expenses object
         public PurchasesViewModel()
         {
             this.Purchases = PurchaseRepository.GetExpenses();
             this.Purchase = new Expenses();
         }
+        #region setting the property for the purchase and the purchases list
         private Expenses purchase;
         public Expenses Purchase
         {
@@ -34,6 +38,7 @@ namespace ExpensesTracker
             }
         }
         public ExpensesList Purchases { get; set; }
+        #endregion setting the property for the purchase and the purchases list
         public void SetDisplayPurchase(Expenses purchase)
         {
             this.Purchase = new Expenses
@@ -45,7 +50,7 @@ namespace ExpensesTracker
                 Information = purchase.Information,
                 Notes = purchase.Notes,
                 Type = purchase.Type
-            };
+        };
         }
         public Expenses GetDisplayPurchase()
         {

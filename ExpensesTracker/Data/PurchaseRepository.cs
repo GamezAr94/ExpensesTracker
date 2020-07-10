@@ -20,7 +20,8 @@ namespace ExpensesTracker.Data
             using(MySqlConnection conn = new MySqlConnection(connString))
             {
                 string query = @"SELECT id_purchase, date_purchase, amount_purchase, category_purchase, info_purchase, notes_purchase, type_purchase
-                                FROM purchase;";
+                                FROM purchase
+                                ORDER BY id_purchase DESC;";
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;
@@ -62,6 +63,36 @@ namespace ExpensesTracker.Data
                 }
             }
             return expensesList;
+        }
+        public static int AddExpenses(Expenses expenses)
+        {
+            int rowsAffected;
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                string query = @"IF NOT EXISTS (SELECT * FROM purchase WHERE notes_purchase LIKE @notes AND date_purchase = @date AND amount_purchase = @amount AND category_purchase = @category AND info_purchase = @info)
+                                THEN
+                                    INSERT INTO purchase
+                                    (date_purchase, amount_purchase, category_purchase, info_purchase, notes_purchase, type_purchase)
+                                    VALUES(@date, @amount, @category, @info, @notes, @type);
+                                END IF;";
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    cmd.Parameters.AddWithValue("date", expenses.Date);
+                    cmd.Parameters.AddWithValue("amount", expenses.Amount);
+                    cmd.Parameters.AddWithValue("category", expenses.Category);
+                    cmd.Parameters.AddWithValue("info", expenses.Information);
+                    cmd.Parameters.AddWithValue("notes", (object)expenses.Notes??DBNull.Value);
+                    cmd.Parameters.AddWithValue("type", expenses.Type);
+                    conn.Open();
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            return rowsAffected;
         }
     }
 }
